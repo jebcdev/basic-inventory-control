@@ -1,0 +1,314 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "basic-auth-management-ts",
+    "collectionId": "0ace1979-fd34-4536-adfe-c5def9091371",
+    "dateExported": "2025-02-05T11:55:22.872Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "0b63475e-c7db-40a8-b4bc-a03fecc2d002",
+            "name": "Root",
+            "containerId": "",
+            "created": "2025-02-02T22:40:45.957Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "Roles",
+            "containerId": "",
+            "created": "2025-02-02T22:40:45.958Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "Users",
+            "containerId": "",
+            "created": "2025-02-02T22:40:45.959Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "187976cd-27a6-41fa-bee1-ef4775f14206",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2025-02-02T23:08:36.643Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3a043631-82af-43a5-9b1b-2f6eb3e1a01b",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "0b63475e-c7db-40a8-b4bc-a03fecc2d002",
+            "name": "Root",
+            "url": "http://localhost:4000/api/v1/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-02-02T22:40:45.957Z",
+            "modified": "2025-02-03T13:59:47.757Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ]
+        },
+        {
+            "_id": "523eac51-5e87-4c5e-8043-3d0b34be23c8",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "GetAll",
+            "url": "http://localhost:4000/api/v1/roles",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-02T22:40:45.958Z",
+            "modified": "2025-02-05T11:19:38.030Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjEsInVzZXJfaWQiOjF9LCJpYXQiOjE3Mzg3NTQzNTYsImV4cCI6MTczODc1Nzk1Nn0._KgrJZ7jiCy6313p2ZRrzyruKn0yAvhs395fEf5uyBs"
+            }
+        },
+        {
+            "_id": "5027805c-ef89-4bb8-a2bc-31db26280b89",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "GetAll",
+            "url": "http://localhost:4000/api/v1/users",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-02T22:40:45.963Z",
+            "modified": "2025-02-02T22:40:45.963Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ]
+        },
+        {
+            "_id": "50be1435-fdea-4103-aed0-d0e498e3d91e",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "0b63475e-c7db-40a8-b4bc-a03fecc2d002",
+            "name": "Seeder",
+            "url": "http://localhost:4000/api/v1/seed/rolesusers",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-03T13:59:23.962Z",
+            "modified": "2025-02-03T22:09:37.620Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ]
+        },
+        {
+            "_id": "d2ddffff-95c4-42ff-a48f-0a8c6e4b7901",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "GetById",
+            "url": "http://localhost:4000/api/v1/roles/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-02T22:40:45.959Z",
+            "modified": "2025-02-02T22:40:45.959Z",
+            "headers": []
+        },
+        {
+            "_id": "0bde50f0-ea3b-4409-b7a5-a50990d7331a",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "GetById",
+            "url": "http://localhost:4000/api/v1/users/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-02T22:40:45.964Z",
+            "modified": "2025-02-05T11:16:03.186Z",
+            "headers": []
+        },
+        {
+            "_id": "5d3710fe-b837-4b65-8a16-8ebbffd48793",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "CreateNew",
+            "url": "http://localhost:4000/api/v1/roles/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-02-02T22:40:45.960Z",
+            "modified": "2025-02-02T22:41:53.674Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"User\",\n  \"description\":\"Regular System User\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "383b9b00-f556-407e-87a3-5d53ede1b1c2",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "CreateNew",
+            "url": "http://localhost:4000/api/v1/users/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-02-02T22:40:45.965Z",
+            "modified": "2025-02-05T11:19:54.242Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Administrator\",\n  \"surname\":\"System\",\n  \"email\":\"admin@admin.commm\",\n  \"password\":\"12345678\",\n  \"role_id\":1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjEsInVzZXJfaWQiOjF9LCJpYXQiOjE3Mzg3NTQzNTYsImV4cCI6MTczODc1Nzk1Nn0._KgrJZ7jiCy6313p2ZRrzyruKn0yAvhs395fEf5uyBs"
+            }
+        },
+        {
+            "_id": "02014e94-f866-4e25-8074-0604561f37fd",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "UpdateById",
+            "url": "http://localhost:4000/api/v1/roles/3",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2025-02-02T22:40:45.961Z",
+            "modified": "2025-02-02T22:40:45.961Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"description\":\"System Administrator\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "680fbdf4-966c-4548-8108-6e3f01e13eb8",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "UpdateById",
+            "url": "http://localhost:4000/api/v1/users/1",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2025-02-02T22:40:45.966Z",
+            "modified": "2025-02-03T21:57:37.954Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"password\":\"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d0ef386e-52dd-4da6-a054-9c4f2930bda6",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "a52df569-8a0d-4985-a38f-f52c87db61be",
+            "name": "DeleteById",
+            "url": "http://localhost:4000/api/v1/roles/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-02T22:40:45.962Z",
+            "modified": "2025-02-05T11:18:48.275Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjIsInVzZXJfaWQiOjJ9LCJpYXQiOjE3Mzg3NTQyOTcsImV4cCI6MTczODc1Nzg5N30.X2A_u-AOTcgBSi-BSyUHnRMdXXNMlS5MVB7Vckn7H4g"
+            }
+        },
+        {
+            "_id": "ec68957c-543a-405a-962f-b566749b6549",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "d30cdf02-3ee5-40af-97b4-c46305b4f8ba",
+            "name": "DeleteById",
+            "url": "http://localhost:4000/api/v1/users/4",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-02T22:40:45.967Z",
+            "modified": "2025-02-05T11:20:19.811Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"New Role | Updated\",\n  \"description\":\"It is a test\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjEsInVzZXJfaWQiOjF9LCJpYXQiOjE3Mzg3NTQzNTYsImV4cCI6MTczODc1Nzk1Nn0._KgrJZ7jiCy6313p2ZRrzyruKn0yAvhs395fEf5uyBs"
+            }
+        },
+        {
+            "_id": "59b1701b-5167-4d87-83a8-46bae7fc7766",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "187976cd-27a6-41fa-bee1-ef4775f14206",
+            "name": "Login",
+            "url": "http://localhost:4000/api/v1/auth/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2025-02-02T23:08:40.960Z",
+            "modified": "2025-02-05T11:19:16.099Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"12345678\"\n}\n\n// {\n//   \"email\":\"user@user.com\",\n//   \"password\":\"12345678\"\n// }\n\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "867faa28-43e8-4745-b4f4-e4ee685c9f78",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "187976cd-27a6-41fa-bee1-ef4775f14206",
+            "name": "Profile",
+            "url": "http://localhost:4000/api/v1/auth/profile",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2025-02-03T01:45:21.167Z",
+            "modified": "2025-02-03T21:58:31.548Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjEsInVzZXJfaWQiOjF9LCJpYXQiOjE3Mzg2MTk4OTksImV4cCI6MTczODYyMzQ5OX0.57t96OOZaYcx9KIk3MvNL7K3D3bA49LquAXP-XASepQ"
+            }
+        },
+        {
+            "_id": "77ede265-8155-4b45-8b78-24816c005f1b",
+            "colId": "0ace1979-fd34-4536-adfe-c5def9091371",
+            "containerId": "187976cd-27a6-41fa-bee1-ef4775f14206",
+            "name": "Register",
+            "url": "http://localhost:4000/api/v1/auth/register",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2025-02-03T12:46:59.867Z",
+            "modified": "2025-02-03T12:49:36.784Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Guest\",\n  \"surname\":\"Guest User\",\n  \"email\":\"guest@guest.com\",\n  \"password\":\"12345678\",\n  \"role_id\":1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InJvbGVfaWQiOjIsInVzZXJfaWQiOjJ9LCJpYXQiOjE3Mzg1ODYxNzQsImV4cCI6MTczODU4OTc3NH0.yrn0dQ-x8eSX22gCRus4uPYH297w3iJ0bYIhmy6y9Fc"
+            }
+        }
+    ],
+    "ref": "aMmsYBYBrP9iNFpj3DPLa7HnB5cWkZDk6nUx8goyAodTKbXDcvAwaJto1fgksAKZSr7AxlFVnakEDqVeylgBrQ"
+}
