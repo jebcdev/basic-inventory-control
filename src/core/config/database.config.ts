@@ -7,5 +7,5 @@ export class DatabaseConfig {
         public static readonly port:number = Number(process.env.DB_PORT || "3306") || 3306;  // Convierte el puerto a número o usa 3306 por defecto.
         public static readonly username:string = process.env.DB_USERNAME || "root";  // Obtiene el usuario o usa "root" por defecto.
         public static readonly password:string = process.env.DB_PASSWORD || "";  // Obtiene la contraseña o usa una cadena vacía por defecto.
-        public static readonly database:string = process.env.DB_NAME || "basic-auth-management-ts";  // Obtiene el nombre de la base de datos o usa "basic-auth-management-ts" por defecto.
+        public static readonly database:string = process.env.DB_NAME || "basic-inventory-control";  // Obtiene el nombre de la base de datos o usa "basic-auth-management-ts" por defecto.
 }
