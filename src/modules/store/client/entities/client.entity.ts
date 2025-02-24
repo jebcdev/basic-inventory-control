@@ -1,8 +1,6 @@
 import{
     Entity,Column,PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn,
     DeleteDateColumn,BaseEntity,
-    ManyToOne,
-    JoinColumn,
     OneToMany,
 } from "typeorm"
 import SaleEntity from "../../sale/entities/sale.entity";

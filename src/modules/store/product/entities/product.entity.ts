@@ -6,7 +6,6 @@ import{
     OneToMany,
 } from "typeorm"
 import CategoryEntity from "../../category/entities/category.entity";
-import SaleEntity from "../../sale/entities/sale.entity";
 import SaleDetailEntity from "../../sale-details/entities/sale-details.entity";
 
 @Entity("products")

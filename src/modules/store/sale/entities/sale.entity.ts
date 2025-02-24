@@ -1,18 +1,24 @@
-import{
-    Entity,Column,PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn,
-    DeleteDateColumn,BaseEntity,
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    DeleteDateColumn,
+    BaseEntity,
     ManyToOne,
     JoinColumn,
-    Double,
     OneToMany,
-} from "typeorm"
+} from "typeorm";
+
 import ClientEntity from "../../client/entities/client.entity";
 import { UserEntity } from "../../../user/entities/user.entity";
-import ProductEntity from "../../product/entities/product.entity";
 import SaleDetailEntity from "../../sale-details/entities/sale-details.entity";
-export enum StatusEnum{
+
+export enum StatusEnum {
     PENDING = "PENDING",
     COMPLETED = "COMPLETED",
+    CANCELED = "CANCELED",
 }
 
 @Entity("sales")
@@ -49,7 +55,10 @@ class SaleEntity extends BaseEntity {
     @JoinColumn({ name: "client_id" })
     client: ClientEntity;
 
-    @OneToMany(() => SaleDetailEntity, (saleDetail) => saleDetail.sale)
+    @OneToMany(
+        () => SaleDetailEntity,
+        (saleDetail) => saleDetail.sale
+    )
     saleDetails: SaleDetailEntity[];
 
     @CreateDateColumn({ type: "timestamp" })

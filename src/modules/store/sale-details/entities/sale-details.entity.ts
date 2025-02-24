@@ -14,6 +14,7 @@ import SaleEntity from "../../sale/entities/sale.entity";
 export enum StatusEnum {
     PENDING = "PENDING",
     COMPLETED = "COMPLETED",
+    CANCELED = "CANCELED",
 }
 
 @Entity("sale_details")
