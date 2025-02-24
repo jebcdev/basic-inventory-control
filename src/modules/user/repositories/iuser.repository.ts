@@ -25,7 +25,7 @@ export interface IUserRepository {
 
     // Actualiza un usuario existente por su ID.
     // Devuelve un UpdateResult si la actualización es exitosa, o null si falla.
-    updateById(id: number, usuarioe: UserEntity): Promise<UpdateResult | null>;
+    updateById(id: number, user: UserEntity): Promise<UpdateResult | null>;
 
     // Elimina un usuario por su ID.
     // Devuelve un DeleteResult si la eliminación es exitosa, o null si falla.

@@ -6,6 +6,7 @@ import { AuthRoutes } from "../auth/routes/auth.routes"; // Importa las rutas de
 import { SeederRoutes } from "../seeder/routes/seeder.routes";
 import { TokenExistsMiddleware } from "../../core/middlewares/tokenExists.middleware";
 import { IsAdminMiddleware } from "../../core/middlewares/isAdmin.middleware";
+import CategoryRoutes from "../store/category/routes/category.routes";
 export class RootRoutes {
     // Propiedad pública para el enrutador
     public readonly router: Router;
@@ -41,5 +42,12 @@ export class RootRoutes {
         ); // Registrar las rutas de los usuarios
         this.router.use("/auth", new AuthRoutes().router); // Registrar las rutas de autenticación
         this.router.use("/seed", new SeederRoutes().router); // Registrar las rutas de seeder
+        /* Store Routes */
+        this.router.use(
+            "/categories",
+            TokenExistsMiddleware.check,// Verifica si el token existe
+            IsAdminMiddleware.check, // Verifica si el usuario es administrador
+            new CategoryRoutes().router
+        ); 
     }
 }
