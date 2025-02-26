@@ -7,6 +7,7 @@ import { SeederRoutes } from "../seeder/routes/seeder.routes";
 import { TokenExistsMiddleware } from "../../core/middlewares/tokenExists.middleware";
 import { IsAdminMiddleware } from "../../core/middlewares/isAdmin.middleware";
 import CategoryRoutes from "../store/category/routes/category.routes";
+import ClientRoutes from "../store/client/routes/client.routes";
 export class RootRoutes {
     // Propiedad pública para el enrutador
     public readonly router: Router;
@@ -48,6 +49,12 @@ export class RootRoutes {
             TokenExistsMiddleware.check,// Verifica si el token existe
             IsAdminMiddleware.check, // Verifica si el usuario es administrador
             new CategoryRoutes().router
+        ); 
+        this.router.use(
+            "/clients",
+            TokenExistsMiddleware.check,// Verifica si el token existe
+            IsAdminMiddleware.check, // Verifica si el usuario es administrador
+            new ClientRoutes().router
         ); 
     }
 }

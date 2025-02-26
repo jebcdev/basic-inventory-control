@@ -50,7 +50,7 @@ class CreateClientDto {
     // Restringe la longitud del teléfono a 200 caracteres.
     @Length(1, 200)
     // Valida que el campo "phone" tenga formato de número de teléfono.
-    @IsPhoneNumber() // Puedes especificar el código de país si lo deseas, por ejemplo: "CO" para Colombia.
+    @IsPhoneNumber("CO") // Puedes especificar el código de país si lo deseas, por ejemplo: "CO" para Colombia.
     phone: string;
 
     // Valida que el campo "description" no esté vacío.

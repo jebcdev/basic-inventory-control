@@ -1,65 +1,73 @@
 import { DeleteResult, Repository, UpdateResult } from "typeorm";
-import ICategoryRepository from "../repositories/icategory.repository";
 import { DatabaseConnection } from "../../../database/DatabaseConnection";
-import CategoryEntity from "../entities/category.entity";
+import ClientEntity from "../entities/client.entity";
+import IClientRepository from "../repositories/client.repository";
 
-class CategoryService implements ICategoryRepository {
-    private repository: Repository<CategoryEntity>;
+class ClientService implements IClientRepository {
+    private repository: Repository<ClientEntity>;
 
     constructor() {
         this.repository =
             DatabaseConnection.appDataSource.getRepository(
-                CategoryEntity
+                ClientEntity
             );
     }
 
-    public async getAll(): Promise<CategoryEntity[] | null> {
+    public async getAll(): Promise<ClientEntity[] | null> {
         return await this.repository.find({
             order: {
                 id: "DESC",
             },
-            relations: ["products"], 
+            relations: ["sales"],
         });
     }
 
-    public async getById(id: number): Promise<CategoryEntity | null> {
+    public async getById(id: number): Promise<ClientEntity | null> {
         return await this.repository.findOne({
             where: {
                 id: id,
             },
-            relations: ["products"], 
+            relations: ["sales"],
         });
     }
 
-    public async getByName(
+    /*     public async getByName(
         name: string
-    ): Promise<CategoryEntity | null> {
+    ): Promise<ClientEntity | null> {
         return await this.repository.findOne({
             where: {
                 name: name, 
             },
         });
-    }
+    } */
 
-    public async getBySlug(
-        slug: string
-    ): Promise<CategoryEntity | null> {
+    public async getByDni(dni: string): Promise<ClientEntity | null> {
         return await this.repository.findOne({
             where: {
-                slug: slug, 
+                dni: dni,
+            },
+        });
+    }
+
+    public async getByEmail(
+        email: string
+    ): Promise<ClientEntity | null> {
+        return await this.repository.findOne({
+            where: {
+                email: email,
             },
         });
     }
 
     public async createNew(
-        data: CategoryEntity
-    ): Promise<CategoryEntity | null> {
+        data: ClientEntity
+    ): Promise<ClientEntity | null> {
         return await this.repository.save(data);
     }
 
     public async updateById(
         id: number,
-        data: CategoryEntity
+        data: ClientEntity
     ): Promise<UpdateResult | null> {
         return await this.repository.update(id, data);
     }
@@ -71,4 +79,4 @@ class CategoryService implements ICategoryRepository {
     }
 }
 
-export default CategoryService;
+export default ClientService;

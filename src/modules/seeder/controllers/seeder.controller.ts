@@ -16,9 +16,13 @@ import { DatabaseConnection } from "../../database/DatabaseConnection";
 // Importa la utilidad BcryptUtil para hashear contraseñas de forma segura.
 import { BcryptUtil } from "../../../utils/bcrypt.util"; 
 
+// Importa el arreglo de datos de prueba para sembrar en la base de datos.
+import seederData from "../data/initial.data";
+
 // Importa la función plainToClass para convertir objetos planos en instancias de clases.
 import { plainToClass } from "class-transformer"; 
 import CategoryEntity from "../../store/category/entities/category.entity";
+import ClientEntity from "../../store/client/entities/client.entity";
 
 // Define la clase SeederController que se encargará de crear roles y usuarios de prueba en la base de datos.
 export class SeederController { 
@@ -26,6 +30,7 @@ export class SeederController {
     private roleRepository: Repository<RoleEntity>; 
     private userRepository: Repository<UserEntity>; 
     private categoryRepository: Repository<CategoryEntity>;
+    private clientRepository: Repository<ClientEntity>;
 
     // Constructor de la clase que inicializa los repositorios utilizando la conexión a la base de datos.
     constructor() { 
@@ -42,6 +47,11 @@ export class SeederController {
             this.categoryRepository = 
             DatabaseConnection.appDataSource.getRepository( 
                 CategoryEntity // Obtiene el repositorio para la entidad CategoryEntity.
+            ); 
+
+            this.clientRepository = 
+            DatabaseConnection.appDataSource.getRepository( 
+                ClientEntity // Obtiene el repositorio para la entidad ClientEntity
             ); 
     } 
 
@@ -143,8 +153,6 @@ export class SeederController {
         } 
     } 
 
-
-
     public async seedCategories(
         _: Request, // No se usa la solicitud (por eso el guion bajo).
         res: Response // Respuesta HTTP que se enviará al cliente.
@@ -190,6 +198,32 @@ export class SeederController {
             // En caso de error, devuelve una respuesta HTTP 500 con un mensaje de error y la información del error.
             return res.status(500).json({
                 message: "Error Seeding Categories", // Mensaje de error.
+                data: error, // Información detallada del error.
+            });
+        }
+    }
+
+    public async seedClients(
+        _: Request, // No se usa la solicitud (por eso el guion bajo).
+        res: Response // Respuesta HTTP que se enviará al cliente.
+    ): Promise<Response> {
+        try {
+            // Itera sobre cada cliente y guárdalo en la base de datos.
+            for (const client of seederData.clients) {
+                await this.clientRepository.save(
+                    plainToClass(ClientEntity, client) // Asegúrate de usar ClientEntity, no CategoryEntity.
+                );
+            }
+    
+            // Devuelve una respuesta HTTP 200 con un mensaje de éxito y los datos de los clientes creados.
+            return res.status(200).json({
+                message: "Clients Seeded Successfully", // Mensaje de éxito.
+                data: seederData.clients, // Datos de los clientes creados.
+            });
+        } catch (error) {
+            // En caso de error, devuelve una respuesta HTTP 500 con un mensaje de error y la información del error.
+            return res.status(500).json({
+                message: "Error Seeding Clients", // Mensaje de error.
                 data: error, // Información detallada del error.
             });
         }
