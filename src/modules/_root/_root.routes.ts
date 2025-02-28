@@ -8,6 +8,7 @@ import { TokenExistsMiddleware } from "../../core/middlewares/tokenExists.middle
 import { IsAdminMiddleware } from "../../core/middlewares/isAdmin.middleware";
 import CategoryRoutes from "../store/category/routes/category.routes";
 import ClientRoutes from "../store/client/routes/client.routes";
+import ProductRoutes from "../store/product/routes/product.routes";
 export class RootRoutes {
     // Propiedad pública para el enrutador
     public readonly router: Router;
@@ -55,6 +56,12 @@ export class RootRoutes {
             TokenExistsMiddleware.check,// Verifica si el token existe
             IsAdminMiddleware.check, // Verifica si el usuario es administrador
             new ClientRoutes().router
+        ); 
+        this.router.use(
+            "/products",
+            TokenExistsMiddleware.check,// Verifica si el token existe
+            IsAdminMiddleware.check, // Verifica si el usuario es administrador
+            new ProductRoutes().router
         ); 
     }
 }

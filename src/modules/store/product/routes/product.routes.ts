@@ -1,16 +1,16 @@
 import { Router } from "express";
 
-import ClientController from "../controllers/client.controller";
+import ProductController from "../controllers/product.controller";
 import { VerifyIdMiddleware } from "../../../../core/middlewares/verifyId.middleware";
 
-class ClientRoutes {
+class ProductRoutes {
     public readonly router: Router;
 
-    private readonly controller: ClientController;
+    private readonly controller: ProductController;
 
     constructor() {
         this.router = Router();
-        this.controller = new ClientController();
+        this.controller = new ProductController();
         this.initializeRoutes();
     }
 
@@ -37,4 +37,4 @@ class ClientRoutes {
     }
 }
 
-export default ClientRoutes;
+export default ProductRoutes;

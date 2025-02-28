@@ -61,7 +61,7 @@ class UpdateProductDto {
     // Valida que el campo "image" sea una cadena de texto.
     @IsString()
     // Valida que el campo "image" sea una URL válida.
-    @IsUrl()
+    // @IsUrl()
     // Restringe la longitud de la URL de la imagen a 250 caracteres.
     @Length(4, 250)
     image: string;
